@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdef5 100%);
+    min-height: 100vh;
+    padding: 30px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Islamic pattern overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" fill="%234285f5"/></svg>');
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 50, 100, 0.2);
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    color: #0a3b5c;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #8fc5e9;
+    position: relative;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+h1::before {
+    content: "﷽";
+    display: block;
+    font-size: 1.8rem;
+    color: #1e6a9f;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Prayer cards */
+p {
+    text-align: right;
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    line-height: 2;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(143, 197, 233, 0.5);
+    border-radius: 20px;
+    color: #1a4b6e;
+    box-shadow: 0 5px 15px rgba(0, 80, 130, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    direction: rtl;
+    font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade', serif;
+}
+
+p:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(30, 106, 159, 0.2);
+    border-color: #1e6a9f;
+    background: #ffffff;
+}
+
+/* Decorative element for each prayer */
+p::before {
+    content: "۞";
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: #1e6a9f;
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+
+p::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231e6a9f" opacity="0.1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>');
+    background-size: contain;
+    opacity: 0.2;
+}
+
+/* Special style for the return button */
+#ex1 {
+    text-align: center;
+    background: linear-gradient(135deg, #1e6a9f, #0a3b5c);
+    color: white !important;
+    font-size: 1.3rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+    font-family: 'Segoe UI', sans-serif;
+    direction: ltr;
+    box-shadow: 0 10px 20px rgba(0, 80, 130, 0.3);
+}
+
+#ex1:hover {
+    background: linear-gradient(135deg, #0a3b5c, #1e6a9f);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 100, 150, 0.4);
+}
+
+#ex1::before,
+#ex1::after {
+    display: none;
+}
+
+
+
+/* Footer style for consistency with home page */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    color: #2c6079;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(30, 106, 159, 0.3);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    p {
+        padding: 20px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h1::before {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    p {
+        padding: 15px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    #ex1 {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Landscape mode */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    p {
+        margin-bottom: 15px;
+        padding: 12px 20px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    .container {
+        box-shadow: none;
+        background: white;
+    }
+
+    p {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    #ex1 {
+        background: white;
+        color: black !important;
+        border: 1px solid black;
+    }
+}
